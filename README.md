@@ -16,6 +16,9 @@ Se realizó una captura de tráfico local interactuando con un entorno web de pr
 
 ###  Evidencia Técnica (Extracto del TCP Stream)
 Al analizar la petición HTTP interceptada, se extrajeron las siguientes credenciales en texto plano:
+<img width="1920" height="1080" alt="Captura de pantalla_20260716_003208" src="https://github.com/user-attachments/assets/15e58af8-a689-47d5-8820-4e4d01ea889f" />
+
+
 
 ```http
 POST /login.html HTTP/1.1
@@ -25,4 +28,6 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 Connection: keep-alive
 
 user=pepito&password=1234
-<img width="1920" height="1080" alt="Captura de pantalla_20260716_003208" src="https://github.com/user-attachments/assets/77b7336a-2622-4e8b-982a-3524164e3b97" />
+
+
+
