@@ -19,15 +19,20 @@ Al analizar la petición HTTP interceptada, se extrajeron las siguientes credenc
 <img width="1920" height="1080" alt="Captura de pantalla_20260716_003208" src="https://github.com/user-attachments/assets/15e58af8-a689-47d5-8820-4e4d01ea889f" />
 
 
+### 💻 Evidencia Técnica
+Aquí se muestran las credenciales obtenidas en texto plano interceptando el paquete HTTP:
+
+> 🖼️ **[ARRASTRA Y SUELTA EL ARCHIVO DE TU CAPTURA DE PANTALLA JUSTO AQUÍ]**
+
+También adjunto el bloque del log extraído directamente del flujo TCP:
 
 ```http
 POST /login.html HTTP/1.1
 Host: zero.webappsecurity.com
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) Firefox/115.0
 Connection: keep-alive
 
-user=pepito&password=1234```
+user=pepito&password=1234
 
 ###  Riesgo y Mitigación
 Este ejercicio demuestra el riesgo de usar el protocolo HTTP frente a HTTPS[cite: 1]. Un atacante en la misma red Wi-Fi podría robar credenciales fácilmente al capturar la información sin cifrar[cite: 1]. 
