@@ -22,7 +22,7 @@ Al analizar la petición HTTP interceptada, se extrajeron las siguientes credenc
 ### 💻 Evidencia Técnica
 Aquí se muestran las credenciales obtenidas en texto plano interceptando el paquete HTTP:
 
-> 🖼️ **[ARRASTRA Y SUELTA EL ARCHIVO DE TU CAPTURA DE PANTALLA JUSTO AQUÍ]**
+<img width="1920" height="1080" alt="Captura de pantalla_20260716_003208" src="https://github.com/user-attachments/assets/15e58af8-a689-47d5-8820-4e4d01ea889f" />
 
 También adjunto el bloque del log extraído directamente del flujo TCP:
 
