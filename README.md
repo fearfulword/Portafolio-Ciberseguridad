@@ -28,9 +28,10 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/w
 Connection: keep-alive
 
 user=pepito&password=1234
-
-
+´´´
 ###  Riesgo y Mitigación
 Este ejercicio demuestra el riesgo de usar el protocolo HTTP frente a HTTPS[cite: 1]. Un atacante en la misma red Wi-Fi podría robar credenciales fácilmente al capturar la información sin cifrar[cite: 1]. 
 
 **Mitigación:** Se debe implementar un certificado de seguridad (SSL/TLS) en el servidor. Esto obliga a que la página cargue mediante HTTPS, cifrando los datos para que nadie en la red pueda leer los usuarios y contraseñas.
+
+
