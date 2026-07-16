@@ -27,8 +27,8 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
 Connection: keep-alive
 
-user=pepito&password=1234
-´´´
+user=pepito&password=1234```
+
 ###  Riesgo y Mitigación
 Este ejercicio demuestra el riesgo de usar el protocolo HTTP frente a HTTPS[cite: 1]. Un atacante en la misma red Wi-Fi podría robar credenciales fácilmente al capturar la información sin cifrar[cite: 1]. 
 
