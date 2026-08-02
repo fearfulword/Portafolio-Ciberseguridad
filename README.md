@@ -56,7 +56,8 @@ Configuración de un entorno de red aislado y seguro (Home Lab) mediante virtual
 ## Fase 1: Arquitectura y Seguridad
 Para este laboratorio, diseñé y configuré un adaptador de red "Host-Only" (`vboxnet0`) para permitir la comunicación bidireccional exclusiva entre mi máquina atacante y la víctima. Esto garantizó que el entorno de pruebas se mantuviera completamente aislado del acceso a internet, aplicando estándares profesionales de seguridad para laboratorios.
 
-*(Espacio para imagen: Arrastra aquí una captura de tu red funcionando)*
+<img width="1372" height="922" alt="image" src="https://github.com/user-attachments/assets/91c11a51-4f18-45ba-820e-8025ce628599" />
+
 
 ---
 
