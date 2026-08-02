@@ -40,3 +40,48 @@ Este ejercicio demuestra el riesgo de usar el protocolo HTTP frente a HTTPS. Un 
 **Mitigación:** Se debe implementar un certificado de seguridad (SSL/TLS) en el servidor. Esto obliga a que la página cargue mediante HTTPS, cifrando los datos para que nadie en la red pueda leer los usuarios y contraseñas.
 
 
+# Proyecto 2: Home Lab y Explotación de Vulnerabilidades (FTP)
+
+## Descripción
+Configuración de un entorno de red aislado y seguro (Home Lab) mediante virtualización para realizar pruebas de penetración (pentesting) de forma individual, sin exponer la red local. El objetivo principal fue construir la arquitectura, identificar y explotar vulnerabilidades críticas en un servidor de pruebas.
+
+## Tecnologías Utilizadas
+* **Hipervisor:** Oracle VirtualBox
+* **Máquina Atacante:** Parrot OS
+* **Máquina Objetivo:** Metasploitable 2
+* **Herramientas:** Nmap, Metasploit Framework
+
+---
+
+## Fase 1: Arquitectura y Seguridad
+Para este laboratorio, diseñé y configuré un adaptador de red "Host-Only" (`vboxnet0`) para permitir la comunicación bidireccional exclusiva entre mi máquina atacante y la víctima. Esto garantizó que el entorno de pruebas se mantuviera completamente aislado del acceso a internet, aplicando estándares profesionales de seguridad para laboratorios.
+
+*(Espacio para imagen: Arrastra aquí una captura de tu red funcionando)*
+
+---
+
+## Fase 2: Reconocimiento y Escaneo (Nmap)
+Una vez asegurada la conexión entre ambas máquinas y descubierta la IP objetivo, procedí a realizar un escaneo agresivo de puertos y servicios de forma autónoma utilizando Nmap (`nmap -sS -T4 -sV`). 
+
+**Resultados del escaneo:**
+Se identificaron múltiples puertos abiertos en la máquina víctima. Durante mi análisis, destaqué como vector de ataque principal el puerto **21 (FTP)**, el cual ejecutaba el servicio `vsftpd 2.3.4`.
+
+*(Espacio para imagen: Arrastra aquí la captura de tu escaneo de Nmap)*
+
+---
+
+## Fase 3: Explotación (Metasploit Framework)
+A partir de los resultados de la fase de reconocimiento, identifiqué que el servicio `vsftpd 2.3.4` contiene una vulnerabilidad crítica conocida (CVE-2011-2523), la cual fue introducida maliciosamente en su código fuente original para permitir la ejecución de comandos a través de un "backdoor" (puerta trasera).
+
+**Ejecución del ataque:**
+Llevé a cabo la explotación utilizando Metasploit Framework mediante los siguientes pasos:
+1. Seleccioné el módulo correspondiente: `exploit/unix/ftp/vsftpd_234_backdoor`.
+2. Resolví un conflicto técnico de enrutamiento asignando dinámicamente mi adaptador de red interno (`set LHOST vboxnet0`) para asegurar la conexión.
+3. Lancé el ataque, obteniendo exitosamente una sesión de **Meterpreter** inyectada en la memoria del objetivo.
+
+*(Espacio para imagen: Arrastra aquí tu captura configurando el ataque en msfconsole)*
+
+**Escalada de Privilegios y Verificación:**
+Para confirmar el nivel de acceso obtenido tras vulnerar el servicio FTP, ejecuté el comando `getuid` dentro de la sesión de Meterpreter. El sistema validó que logré comprometer la máquina con privilegios máximos, obteniendo el control total como usuario `root`.
+
+*(Espacio para imagen: Arrastra aquí la captura final donde se ve la respuesta "root")*
