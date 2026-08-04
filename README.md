@@ -67,7 +67,8 @@ Una vez asegurada la conexión entre ambas máquinas y descubierta la IP objetiv
 **Resultados del escaneo:**
 Se identificaron múltiples puertos abiertos en la máquina víctima. Durante mi análisis, destaqué como vector de ataque principal el puerto **21 (FTP)**, el cual ejecutaba el servicio `vsftpd 2.3.4`.
 
-*(Espacio para imagen: Arrastra aquí la captura de tu escaneo de Nmap)*
+<img width="1033" height="554" alt="image" src="https://github.com/user-attachments/assets/5d8c144e-15b1-437f-8c6d-5158895ab8f2" />
+
 
 ---
 
@@ -79,10 +80,13 @@ Llevé a cabo la explotación utilizando Metasploit Framework mediante los sigui
 1. Seleccioné el módulo correspondiente: `exploit/unix/ftp/vsftpd_234_backdoor`.
 2. Resolví un conflicto técnico de enrutamiento asignando dinámicamente mi adaptador de red interno (`set LHOST vboxnet0`) para asegurar la conexión.
 3. Lancé el ataque, obteniendo exitosamente una sesión de **Meterpreter** inyectada en la memoria del objetivo.
+<img width="1920" height="1031" alt="image" src="https://github.com/user-attachments/assets/74d0042b-a02e-4d55-9642-d52a50ce2377" />
 
-*(Espacio para imagen: Arrastra aquí tu captura configurando el ataque en msfconsole)*
+
+
 
 **Escalada de Privilegios y Verificación:**
 Para confirmar el nivel de acceso obtenido tras vulnerar el servicio FTP, ejecuté el comando `getuid` dentro de la sesión de Meterpreter. El sistema validó que logré comprometer la máquina con privilegios máximos, obteniendo el control total como usuario `root`.
 
-*(Espacio para imagen: Arrastra aquí la captura final donde se ve la respuesta "root")*
+<img width="1920" height="1029" alt="image" src="https://github.com/user-attachments/assets/fb876668-39bc-4517-9051-ed9d14e51cc6" />
+
